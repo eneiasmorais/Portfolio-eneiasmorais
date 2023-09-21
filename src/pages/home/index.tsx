@@ -26,10 +26,12 @@ import {
   ProjectAreaWrapperColumns,
   ProjectsAreaContent,
 } from "./style";
+import { AboutMe } from "@/components/About";
 
 export const Home = (): JSX.Element => {
   const gihubUrl = `https://github.com/${userData.githubUser}`;
   const portfolioUrl = `https://github.com/${userData.githubUser}/my-portfolio`;
+  const portfolioLinkedIn = `https://www.linkedin.com/in/${userData.linkedinUser}/details/projects/`;
 
   return (
     <main id="home">
@@ -44,29 +46,33 @@ export const Home = (): JSX.Element => {
                 width={"48px"}
                 height={"48px"}
               />
-              <Text color="grey4">Hello, my name is {userData.nameUser}</Text>
+              <Text color="grey4"> {userData.nameUser}</Text>
             </Flex>
             <Text as="h1" type="heading1" color="grey5">
-            I{" "}
+              Transforming{" "}
               <Text as="span" type="heading1" color="brand1">
-                love
+                ideas
               </Text>{" "}
-              creating and{" "}
+              into{" "}
               <Text as="span" type="heading1" color="brand1">
-                developing
+                digital
               </Text>{" "}
-              projects
+              reality
             </Text>
+
             <Text type="body1" color="grey2">
-              Discover here in this environment, created especially for you, all
-              my projects and technologies
+              Passion for translating ideas into code, creating unique and
+              impactful digital experiences.
             </Text>
             <HeaderButtonsArea>
               <Button as="a" type="primary" href="#projects">
                 See Projects
               </Button>
               <Button as="a" type="outline" target="_blank" href={portfolioUrl}>
-                See my portfolio source code
+                This source code
+              </Button>
+              <Button as="a" type="outline" href={portfolioLinkedIn}>
+                LinkedIn Portfolio
               </Button>
               <Button
                 color="grey5"
@@ -79,6 +85,7 @@ export const Home = (): JSX.Element => {
                 <FaGithub />
               </Button>
             </HeaderButtonsArea>
+            <AboutMe></AboutMe>
             <StackCards>
               {stackData.map((stack, index) => (
                 <Stack key={index} title={stack.title} icon={stack.img} />
