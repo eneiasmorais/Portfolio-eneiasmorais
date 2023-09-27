@@ -41,7 +41,14 @@ export const Contacts = () => {
           </motion.div>
           <ContactsCards>
             <ContactCard>
-              <ContactCardImage className="wpp">
+              <ContactCardImage
+                className="wpp"
+                as="a"
+                type="heading4"
+                color="grey4"
+                target="_blank"
+                href={`https://api.whatsapp.com/send?phone=+55+${userData.whatsappNumber}&text=Ol%C3%A1%2C%20venho%20por%20meio%20do%20seu%20portf%C3%B3lio%20na%20internet%2C%20gostaria%20de%20conhecer%20melhor%20seus%20servi%C3%A7os`}
+              >
                 <FaWhatsapp color="#fff" size={24} />
               </ContactCardImage>
               <ContactCardContent>
@@ -71,7 +78,17 @@ export const Contacts = () => {
             </ContactCard>
 
             <ContactCard>
-              <ContactCardImage className="email">
+              <ContactCardImage
+                className="email"
+                as="a"
+                type="heading4"
+                color="grey4"
+                target="_blank"
+                href={`mailto=${userData.emailUser}`}
+                onClick={() =>
+                  (window.location.href = "mailto:eneiasmorais@gmail.com")
+                }
+              >
                 <FaEnvelopeOpen color="#fff" size={24} />
               </ContactCardImage>
               <ContactCardContent>
@@ -106,7 +123,14 @@ export const Contacts = () => {
               </ContactCardContent>
             </ContactCard>
             <ContactCard>
-              <ContactCardImage className="linkedin">
+              <ContactCardImage
+                className="linkedin"
+                as="a"
+                color="grey2"
+                type="body2"
+                target="_blank"
+                href={linkedInUrl}
+              >
                 <FaLinkedin color="#fff" size={24} />
               </ContactCardImage>
               <ContactCardContent>
